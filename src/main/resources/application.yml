@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hanwy-tools
+
+spring:
+  application:
+    name: hanwy-tools
+  thymeleaf:
+    cache: false
