@@ -15,9 +15,9 @@ import java.util.Objects;
 public class LogUtil {
     private static final String LOG_BASIC = "{}({})";
     private static final String LOG_START = String.format("******** %s Begin ********", LOG_BASIC);
+    private static final String LOG_END = String.format("******** %s End ********", LOG_BASIC);
     private static final String PARAM_IN = "接口入参：{}";
     private static final String PARAM_OUT = "接口出参：{}";
-    private static final String LOG_END = String.format("******** %s End ********", LOG_BASIC);
     private static final ObjectMapper JSON = new ObjectMapper();
 
     private static Logger log;
@@ -45,7 +45,7 @@ public class LogUtil {
             try {
                 log.info(PARAM_IN, JSON.writeValueAsString(args));
             } catch (JsonProcessingException e) {
-                log.error("将入参转换为 JSON 字符串时发生异常！", e);
+                log.error("将参数转换为 JSON 字符串时发生异常！", e);
             }
         }
     }
